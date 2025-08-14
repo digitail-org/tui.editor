@@ -165,11 +165,7 @@ export default abstract class EditorBase implements Base {
 
   focus() {
     this.clearTimer();
-    // prevent the error for IE11
-    this.timer = setTimeout(() => {
-      this.view.focus();
-      this.view.dispatch(this.view.state.tr.scrollIntoView());
-    });
+    this.view.focus();
   }
 
   blur() {
